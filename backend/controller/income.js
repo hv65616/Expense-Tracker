@@ -23,7 +23,7 @@ const addincome = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: "Server Error From Add Income" });
   }
-  console.log(income);
+  // console.log(income);
 };
 
 const getincome = async (req, res) => {
@@ -34,4 +34,13 @@ const getincome = async (req, res) => {
     res.status(500).json({ message: "Server Error From Get Income" });
   }
 };
-module.exports = { addincome,getincome };
+
+const deleteincome = (req, res) => {
+  const { id } = req.params;
+  Income.findByIdAndDelete(id).then((income) => {
+    res.status(200).json({ message: "Income deleted" })
+  }).catch((err)=>{
+    res.status(500).json({message:"Server error"})
+  })
+};
+module.exports = { addincome, getincome, deleteincome };
