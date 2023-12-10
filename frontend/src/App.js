@@ -2,12 +2,13 @@ import styled from "styled-components";
 import bg from "./img/bg.png";
 import { MainLayout } from "./styles/Layouts";
 import Orb from "./components/Orb/Orb";
+import Navigation from "./components/Navigation/Navigation";
 function App() {
   return (
     <AppStyled bg={bg} classname="App">
       <Orb></Orb>
       <MainLayout>
-        <h1>Hello</h1>
+        <Navigation></Navigation>
       </MainLayout>
     </AppStyled>
   );
@@ -19,3 +20,5 @@ const AppStyled = styled.div`
 `;
 
 export default App;
+
+// 1:30:32
